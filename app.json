@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9a39380a-fce2-4609-aea8-6d20df4a4e3d"
+      }
+    },
+    "owner": "trixiesdxd"
   }
 }

@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import MainPage from './components/MainPage';
-import TimerPage from './components/TimerPage';
-import MainStack from './Navigate.js';
 
-export default function App() {
+export default function TimerPage() {
   return (
-    <MainStack />
+    <SafeAreaView>
+      <Text>TimerPage</Text>
+      <StatusBar style="auto" />
+    </SafeAreaView>
   );
 }
 
