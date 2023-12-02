@@ -23,6 +23,15 @@ export const gloabalStyles = StyleSheet.create({
     width: '100%',
     backgroundColor: 'rgba(30,30,30,1)',
     paddingHorizontal: 30,
+    paddingBottom: 20,
+  },
+  footer: {
+    flex: 0.5,
+    width: '100%',
+    backgroundColor: 'rgba(60,60,60,1)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   hr: {
     borderBottomColor: 'white',

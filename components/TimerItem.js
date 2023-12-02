@@ -51,7 +51,7 @@ function formatDate(date) {
 const styles = StyleSheet.create({
     block:{
         height: 140,
-        width: '48%',
+        width: '100%',
         marginBottom: 10,
         borderWidth: 2,
         borderColor: 'rgba(60,60,60,1)',

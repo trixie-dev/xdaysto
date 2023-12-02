@@ -9,7 +9,7 @@ import { getDateTime } from './Utils';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-export default function MainPage() {
+export default function MainPage({navigation}) {
     const [timers, setTimers] = useState([
         
     ]);
@@ -64,7 +64,7 @@ export default function MainPage() {
             <View style={gloabalStyles.body}>
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
                     <Text style={gloabalStyles.subTitle}>Timers: </Text>
-                    <AntDesign name={'plussquareo'} size={24} color={'white'} style={gloabalStyles.addIcon} onPress={() => setModalOpen(true)}/>
+                    <AntDesign name={'plus'} size={24} color={'white'} style={styles.button} onPress={() => setModalOpen(true)}/>
                 </View>
                 
                 <View style={gloabalStyles.hr}></View>
@@ -74,7 +74,10 @@ export default function MainPage() {
                     numColumns={2} 
                     columnWrapperStyle={styles.columnWrapper}
                     renderItem={({item}) => (
-                        <TimerItem item={item} removeTimer={() => removeTimer(item.id)}/>
+                        <TouchableOpacity onPress={() => navigation.navigate('TimerPage', item)} style={{height: 160,
+                            width: '48%',}}>
+                            <TimerItem item={item} removeTimer={() => removeTimer(item.id)}/>
+                        </TouchableOpacity>
                     )} 
                 />
             </View>
@@ -106,6 +109,17 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         padding: 20,
         borderRadius: 10,
+        elevation: 5,
+    },
+    button:{
+        backgroundColor: 'rgba(60,60,60,1)',
+        paddingHorizontal: 20,
+        paddingVertical: 5,
+        justifyContent: 'center',
+        shadowColor: 'black',
+        shadowOffset: {width: 2, height: 2},
+        shadowOpacity: 0.5,
+        shadowRadius: 2,
         elevation: 5,
     },
     
