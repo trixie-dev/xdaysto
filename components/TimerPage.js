@@ -29,13 +29,11 @@ export default function TimerPage({ route }) {
     let timerItems = [];
 
     const setTimerItems = () => {
-        console.log(mode);
         timerItems = [];
         if (mode == 'Days') {
             fillArray(daysToNow, daysCount);
           }
         if (mode == 'Weeks') {
-            console.log('weeksToNow: ' + weeksToNow + ' weeksCount: ' + weeksCount);
             fillArray(weeksToNow, weeksCount);
         }
         if (mode == 'Months') {
@@ -51,18 +49,14 @@ export default function TimerPage({ route }) {
     }, [mode]);
 
     const fillArray = (filledCount, allCount) => {
-        console.log('fillArray');
         let i;
         for ( i = 0; i < filledCount; i++) {
-            console.log('push filled: ' + i);
             timerItems.push({index: i, isFilled: true});
         }
         
         for (let j = 0; j < allCount - filledCount; j++) {
-            console.log('push other: ' + j);
             timerItems.push({index: j + i, isFilled: false});
         }
-        console.log(timerItems.length);
     };
 
     const nextMode = () => {
